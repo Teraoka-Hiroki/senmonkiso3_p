@@ -212,18 +212,13 @@ st.write('')
 
 st.markdown('##### 問４　以下の動画を視聴してから問いに答えなさい')
 if st.button('問４：Play Video'):
-# 共有リンクからファイルIDを抽出
-    file_id = "1zI1o33IiblGtTmogzuuRxNhRZbrRbIsd"
-# ダウンロードリンクを生成
-    download_link = f"https://drive.google.com/uc?id={file_id}"
-# モデルをダウンロード
-    response = requests.get(download_link)
-# モデルファイルを保存
-    with open("m1.mp4", "wb") as f:
+    file_id = "1zI1o33IiblGtTmogzuuRxNhRZbrRbIsd" # 共有リンクからファイルIDを抽出
+    download_link = f"https://drive.google.com/uc?id={file_id}" # ダウンロードリンクを生成
+    response = requests.get(download_link)  # モデルをダウンロード
+    with open("m1.mp4", "wb") as f: # モデルファイルを保存
         f.write(response.content)
     st.video("m1.mp4")
 
-#video_file_url = 'https://drive.google.com/file/d/1zI1o33IiblGtTmogzuuRxNhRZbrRbIsd/view?usp=sharing'  # Google Driveの動画ファイルのIDを指定してください
 st.markdown('##### 適する用語をプルダウンからを選んでください。')
 st.markdown('##### ３問全て選んでから判定します。')
 input_option4_1 = st.selectbox(
@@ -249,17 +244,192 @@ if input_option4_3 == '=MODE()':
 if n_ok==3:
     st.write('全問正解です。')
 else :
-    st.write('不正解です。動画を見直してください。')
-
-
-
-
-
+    st.write('不正解です。何処かが間違っています。動画を見直してください。')
+st.write('')
+st.write('')
 st.write('')
 
 
+st.markdown('##### 問５　以下の動画を視聴してから問いに答えなさい')
+if st.button('問５：Play Video'):
+    file_id = "1tYKDUikEnwG5sBU84nrYVBbh8HrJbSqh" # 共有リンクからファイルIDを抽出
+    download_link = f"https://drive.google.com/uc?id={file_id}" # ダウンロードリンクを生成
+    response = requests.get(download_link)  # モデルをダウンロード
+    with open("m2.mp4", "wb") as f: # モデルファイルを保存
+        f.write(response.content)
+    st.video("m2.mp4")
+
+st.markdown('##### 適する用語をプルダウンからを選んでください。')
+st.markdown('##### ３問全て選んでから判定します。')
+input_option5_1 = st.selectbox(
+    '問5.1　最大値を求めるエクセルの関数を選びなさい',
+    ('選んでください', '=MAX()', '=MINN()', '=(最大値)-(最小値)')
+)
+input_option5_2 = st.selectbox(
+    '問5.2　最小値を求めるエクセルの関数を選びなさい',
+    ('選んでください', '=MAX()', '=MINN()', '=(最大値)-(最小値)')
+)
+input_option5_3 = st.selectbox(
+    '問5.3　範囲を求めるエクセルの関数を選びなさい',
+    ('選んでください', '=MAX()', '=MINN()', '=(最大値)-(最小値)')
+)
+n_ok=0
+input_data = None
+if input_option5_1 == '=MAX()':
+    n_ok =n_ok+1 
+if input_option5_2 == '=MINN()':
+    n_ok=n_ok+1 
+if input_option5_3 == '=(最大値)-(最小値)':
+    n_ok=n_ok+1 
+if n_ok==3:
+    st.write('全問正解です。')
+else :
+    st.write('不正解です。何処かが間違っています。動画を見直してください。')
 st.write('')
 st.write('')
+st.write('')
+
+#https://drive.google.com/file/d/1UnimUwdLjS4Y3TKSRtOsqq18cQERflbD/view?usp=sharing
+st.markdown('##### 問６　以下の動画を視聴してから問いに答えなさい')
+if st.button('問６：Play Video'):
+    file_id = "1UnimUwdLjS4Y3TKSRtOsqq18cQERflbD" # 共有リンクからファイルIDを抽出
+    download_link = f"https://drive.google.com/uc?id={file_id}" # ダウンロードリンクを生成
+    response = requests.get(download_link)  # モデルをダウンロード
+    with open("m3.mp4", "wb") as f: # モデルファイルを保存
+        f.write(response.content)
+    st.video("m3.mp4")
+image3 = Image.open('toi3.jpg')
+st.image(image3,use_column_width=True)
+st.markdown('##### 適する用語をプルダウンからを選んでください。')
+st.markdown('##### ２問全て選んでから判定します。')
+input_option6_1 = st.selectbox(
+    '問6.1　C7セルに入れる関数を選びなさい',
+    ('選んでください', '=IF(C7>=0,"OK","NG")', '=$B$4-$C$4*B7', '=IF(C7>=0,"NG","OK")')
+)
+input_option6_2 = st.selectbox(
+    '問6.2　D7セルに入れる関数を選びなさい',
+    ('選んでください', '=IF(C7>=0,"OK","NG")', '=$B$4-$C$4*B7', '=IF(C7>=0,"NG","OK")')
+)
+n_ok=0
+input_data = None
+if input_option6_1 == '=$B$4-$C$4*B7':
+    n_ok =n_ok+1 
+if input_option6_2 == '=IF(C7>=0,"OK","NG")':
+    n_ok=n_ok+1 
+if n_ok==2:
+    st.write('全問正解です。')
+else :
+    st.write('不正解です。何処かが間違っています。動画を見直してください。')
+st.write('')
+st.write('')
+st.write('')
+
+#https://drive.google.com/file/d/18Kwu9foqxlTzUSwdgbunvW4Nld_4ApW3/view?usp=sharing
+st.markdown('##### 問７　以下の動画を視聴してから問いに答えなさい')
+if st.button('問７：Play Video'):
+    file_id = "18Kwu9foqxlTzUSwdgbunvW4Nld_4ApW3" # 共有リンクからファイルIDを抽出
+    download_link = f"https://drive.google.com/uc?id={file_id}" # ダウンロードリンクを生成
+    response = requests.get(download_link)  # モデルをダウンロード
+    with open("m4.mp4", "wb") as f: # モデルファイルを保存
+        f.write(response.content)
+    st.video("m4.mp4")
+
+st.markdown('##### 適する用語をプルダウンからを選んでください。')
+#st.markdown('##### ３問全て選んでから判定します。')
+input_option7_1 = st.selectbox(
+    '問4.1　相関係数を求めるエクセルの関数を選びなさい',
+    ('選んでください', '=CORREL(C4:C8,D4:D8)', '=CORREL(C4,D4)', '=CORREL(C4:C8)')
+)
+
+n_ok=0
+input_data = None
+if input_option7_1 == '=CORREL(C4:C8,D4:D8)':
+    n_ok =n_ok+1 
+if n_ok==1:
+    st.write('正解です。')
+else :
+    st.write('不正解です。何処かが間違っています。動画を見直してください。')
+st.write('')
+st.write('')
+st.write('')
+
+# https://drive.google.com/file/d/1N4oz_jj1KfLtX_jCrLZCPb7sVmg52754/view?usp=sharing
+st.markdown('##### 問８　以下の動画を視聴してから問いに答えなさい')
+if st.button('問８：Play Video'):
+    file_id = "1N4oz_jj1KfLtX_jCrLZCPb7sVmg52754" # 共有リンクからファイルIDを抽出
+    download_link = f"https://drive.google.com/uc?id={file_id}" # ダウンロードリンクを生成
+    response = requests.get(download_link)  # モデルをダウンロード
+    with open("m5.mp4", "wb") as f: # モデルファイルを保存
+        f.write(response.content)
+    st.video("m5.mp4")
+image8 = Image.open('toi7.jpg')
+st.image(image8,use_column_width=True)
+st.markdown('##### 適する用語をプルダウンからを選んでください。')
+st.markdown('##### ２問全て選んでから判定します。')
+input_option8_1 = st.selectbox(
+    '問8.1　エクセルのグラフにおいてオプションを追加するボタンはどれか',
+    ('選んでください', '+', '-', '*')
+)
+input_option8_2 = st.selectbox(
+    '問8.2　グラフにおいて外れ値は誰か',
+    ('選んでください', 'A', 'B', 'C', 'D')
+)
+n_ok=0
+input_data = None
+if input_option8_1 == '+':
+    n_ok =n_ok+1 
+if input_option8_2 == 'D':
+    n_ok=n_ok+1 
+if n_ok==2:
+    st.write('全問正解です。')
+else :
+    st.write('不正解です。何処かが間違っています。動画を見直してください。')
+st.write('')
+st.write('')
+st.write('')
+
+# https://drive.google.com/file/d/1qa4j5mNrAKrGM_Zu_0W09NBZtKmEfnOa/view?usp=sharing
+st.markdown('##### 問９　以下の動画を視聴してから問いに答えなさい')
+if st.button('問９：Play Video'):
+    file_id = "1qa4j5mNrAKrGM_Zu_0W09NBZtKmEfnOa" # 共有リンクからファイルIDを抽出
+    download_link = f"https://drive.google.com/uc?id={file_id}" # ダウンロードリンクを生成
+    response = requests.get(download_link)  # モデルをダウンロード
+    with open("m6.mp4", "wb") as f: # モデルファイルを保存
+        f.write(response.content)
+    st.video("m6.mp4")
+image9 = Image.open('toi9.jpg')
+st.image(image9,use_column_width=True)
+st.markdown('##### 適する用語をプルダウンからを選んでください。')
+st.markdown('##### ３問全て選んでから判定します。')
+input_option9_1 = st.selectbox(
+    '問9.1　C4セルに入れる乱数の関数を選びなさい',
+    ('選んでください', '=RANDBETWEEN(10)', '=RANDBETWEEN(1)', '=RANDBETWEEN(1,10)')
+)
+input_option9_2 = st.selectbox(
+    '問9.2　D4セルに入れる関数を選びなさい',
+    ('選んでください', '=IF(C4=0,"OK","NG")', '=IF(C4=1,"OK","NG")', '=IF(C4=1,"NG","OK")')
+)
+input_option9_3 = st.selectbox(
+    '問9.3　再試行させる場合のキーを選びなさい',
+    ('選んでください', 'F4', 'F7', 'F9')
+)
+n_ok=0
+input_data = None
+if input_option9_1 == '=RANDBETWEEN(1,10)':
+    n_ok =n_ok+1 
+if input_option9_2 == '=IF(C4=1,"OK","NG")':
+    n_ok=n_ok+1 
+if input_option9_3 == 'F9':
+    n_ok=n_ok+1 
+if n_ok==3:
+    st.write('全問正解です。')
+else :
+    st.write('不正解です。何処かが間違っています。動画を見直してください。')
+st.write('')
+st.write('')
+st.write('')
+
+
 
 st.markdown('### 問題は以上です。')
 
