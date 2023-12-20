@@ -214,16 +214,19 @@ st.markdown('##### 問４　以下の動画を視聴してから問いに答え�
 st.markdown('##### 適する用語をプルダウンからを選んでください。')
 st.markdown('##### ３問全て選んでから判定します。')
 
+if st.button('Play Video'):
 # 共有リンクからファイルIDを抽出
-file_id = "1zI1o33IiblGtTmogzuuRxNhRZbrRbIsd"
+    file_id = "1zI1o33IiblGtTmogzuuRxNhRZbrRbIsd"
 
 # ダウンロードリンクを生成
-download_link = f"https://drive.google.com/uc?id={file_id}"
+    download_link = f"https://drive.google.com/uc?id={file_id}"
 
 # モデルをダウンロード
-response = requests.get(download_link)
-if st.button('Play Video'):
-    st.video(response)
+    response = requests.get(download_link)
+# モデルファイルを保存
+    with open("m1.mp4", "wb") as f:
+        f.write(response.content)
+    st.video(m1.mp4)
 
 #video_file_url = 'https://drive.google.com/file/d/1zI1o33IiblGtTmogzuuRxNhRZbrRbIsd/view?usp=sharing'  # Google Driveの動画ファイルのIDを指定してください
 #video_filename = 'm1.mp4'
