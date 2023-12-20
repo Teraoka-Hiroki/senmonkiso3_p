@@ -2,7 +2,7 @@
 
 import os
 from google.cloud import texttospeech
-
+import requests
 import io
 import streamlit as st
 from PIL import Image
@@ -222,7 +222,8 @@ download_link = f"https://drive.google.com/uc?id={file_id}"
 
 # モデルをダウンロード
 response = requests.get(download_link)
-st.video(response)
+if st.button('Play Video'):
+    st.video(response)
 
 #video_file_url = 'https://drive.google.com/file/d/1zI1o33IiblGtTmogzuuRxNhRZbrRbIsd/view?usp=sharing'  # Google Driveの動画ファイルのIDを指定してください
 #video_filename = 'm1.mp4'
