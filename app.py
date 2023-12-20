@@ -226,7 +226,7 @@ if st.button('Play Video'):
 # モデルファイルを保存
     with open("m1.mp4", "wb") as f:
         f.write(response.content)
-    st.video(m1.mp4)
+    st.video("m1.mp4")
 
 #video_file_url = 'https://drive.google.com/file/d/1zI1o33IiblGtTmogzuuRxNhRZbrRbIsd/view?usp=sharing'  # Google Driveの動画ファイルのIDを指定してください
 #video_filename = 'm1.mp4'
