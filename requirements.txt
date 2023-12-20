@@ -2,7 +2,6 @@ streamlit==1.20.0
 matplotlib
 numpy
 Pillow
-google-cloud-texttospeech
-urllib.request
+google-cloud-texttospeechrequest
 
 
