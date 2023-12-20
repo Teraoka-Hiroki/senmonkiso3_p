@@ -211,16 +211,11 @@ st.write('')
 
 
 st.markdown('##### 問４　以下の動画を視聴してから問いに答えなさい')
-st.markdown('##### 適する用語をプルダウンからを選んでください。')
-st.markdown('##### ３問全て選んでから判定します。')
-
-if st.button('Play Video'):
+if st.button('問４：Play Video'):
 # 共有リンクからファイルIDを抽出
     file_id = "1zI1o33IiblGtTmogzuuRxNhRZbrRbIsd"
-
 # ダウンロードリンクを生成
     download_link = f"https://drive.google.com/uc?id={file_id}"
-
 # モデルをダウンロード
     response = requests.get(download_link)
 # モデルファイルを保存
@@ -229,10 +224,35 @@ if st.button('Play Video'):
     st.video("m1.mp4")
 
 #video_file_url = 'https://drive.google.com/file/d/1zI1o33IiblGtTmogzuuRxNhRZbrRbIsd/view?usp=sharing'  # Google Driveの動画ファイルのIDを指定してください
-#video_filename = 'm1.mp4'
-#mv_app(video_file_url, video_filename)
+st.markdown('##### 適する用語をプルダウンからを選んでください。')
+st.markdown('##### ３問全て選んでから判定します。')
+input_option4_1 = st.selectbox(
+    '問4.1　平均値を求めるエクセルの関数を選びなさい',
+    ('選んでください', '=AVERAGE()', '=MEDIAN()', '=MODE()')
+)
+input_option4_2 = st.selectbox(
+    '問4.2　中央値を求めるエクセルの関数を選びなさい',
+    ('選んでください', '=AVERAGE()', '=MEDIAN()', '=MODE()')
+)
+input_option4_3 = st.selectbox(
+    '問4.3　最頻値を求めるエクセルの関数を選びなさい',
+    ('選んでください', '=AVERAGE()', '=MEDIAN()', '=MODE()')
+)
+n_ok=0
+input_data = None
+if input_option4_1 == '=AVERAGE()':
+    n_ok =n_ok+1 
+if input_option4_2 == '=MEDIAN()':
+    n_ok=n_ok+1 
+if input_option4_3 == '=MODE()':
+    n_ok=n_ok+1 
+if n_ok==3:
+    st.write('全問正解です。')
+else :
+    st.write('不正解です。動画を見直してください。')
 
-#        video_file_url = 'https://drive.google.com/uc?export=download&id=YourFileID'  # Google Driveの動画ファイルのIDを指定してください
+
+
 
 
 st.write('')
