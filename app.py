@@ -271,13 +271,13 @@ input_option5_2 = st.selectbox(
 )
 input_option5_3 = st.selectbox(
     '問5.3　範囲を求めるエクセルの関数を選びなさい',
-    ('選んでください', '=MAX()', '=MINN()', '=(最大値)-(最小値)')
+    ('選んでください', '=MAX()', '=MIN()', '=(最大値)-(最小値)')
 )
 n_ok=0
 input_data = None
 if input_option5_1 == '=MAX()':
     n_ok =n_ok+1 
-if input_option5_2 == '=MINN()':
+if input_option5_2 == '=MIN()':
     n_ok=n_ok+1 
 if input_option5_3 == '=(最大値)-(最小値)':
     n_ok=n_ok+1 
@@ -337,7 +337,7 @@ if st.button('問７：Play Video'):
 st.markdown('##### 適する用語をプルダウンからを選んでください。')
 #st.markdown('##### ３問全て選んでから判定します。')
 input_option7_1 = st.selectbox(
-    '問4.1　相関係数を求めるエクセルの関数を選びなさい',
+    '問7.1　相関係数を求めるエクセルの関数を選びなさい',
     ('選んでください', '=CORREL(C4:C8,D4:D8)', '=CORREL(C4,D4)', '=CORREL(C4:C8)')
 )
 
@@ -348,7 +348,7 @@ if input_option7_1 == '=CORREL(C4:C8,D4:D8)':
 if n_ok==1:
     st.write('正解です。')
 else :
-    st.write('不正解です。何処かが間違っています。動画を見直してください。')
+    st.write('不正解です。動画を見直してください。')
 st.write('')
 st.write('')
 st.write('')
@@ -431,7 +431,7 @@ st.write('')
 
 
 
-st.markdown('### 問題は以上です。')
+st.markdown('### 問題は以上です。お疲れさまでした。')
 
 
 
